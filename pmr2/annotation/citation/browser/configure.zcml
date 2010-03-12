@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="pmr2">
+
+  <!-- Browser pages -->
+
+  <browser:page
+      for="..interfaces.ILicense"
+      name="edit_license"
+      class=".form.LicenseEditFormView"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <!-- Note pages -->
+
+  <browser:page
+      for="pmr2.app.content.ExposureFile"
+      name="license_citation"
+      class=".view.LicenseCitationNoteView"
+      permission="zope2.View"
+      />
+
+</configure>

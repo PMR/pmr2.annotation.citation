@@ -1,0 +1,11 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="pmr2">
+
+  <subscriber
+      for="pmr2.annotation.citation.interfaces.ILicense
+          zope.app.event.interfaces.IObjectModifiedEvent"
+      handler=".content.catalog_content"
+      />
+
+</configure>

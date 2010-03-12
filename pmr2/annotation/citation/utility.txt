@@ -1,0 +1,23 @@
+=======
+Utility
+=======
+
+First we make some License documents inside a license folder.
+::
+
+    >>> from Products.ATContentTypes.content.folder import ATFolder
+    >>> from pmr2.annotation.citation.content import License
+    >>> licenses = 'licenses'
+    >>> self.portal[licenses] = ATFolder(licenses)
+    >>> self.licenses = self.portal.licenses
+    >>> self.licenses['L1'] = License('L1')
+    >>> self.licenses['L2'] = License('L2')
+    >>> self.licenses['L3'] = License('L3')
+
+Then we can use the catalog the query for licenses.
+::
+
+    >>> from pmr2.annotation.citation.utility import getLicenses
+    >>> results = getLicenses(self.portal)
+    >>> len(results) == 3
+    True

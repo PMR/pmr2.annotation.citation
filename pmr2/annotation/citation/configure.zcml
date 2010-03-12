@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="pmr2">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <include package="pmr2.app" />
+
+  <include package=".browser" />
+  <include file="profiles.zcml" />
+  <include file="catalog.zcml" />
+  <include file="vocab.zcml" />
+  <include file="subscriber.zcml" />
+
+  <!-- Note storage -->
+
+  <adapter
+      for="pmr2.app.content.interfaces.IExposureFile"
+      factory=".LicenseCitationNoteFactory"
+      provides="pmr2.annotation.citation.interfaces.ILicenseCitationNote"
+      name="license_citation"
+      />
+
+  <!-- Note Generation -->
+
+  <utility
+      name="license_citation"
+      component=".annotator.LicenseCitationAnnotatorFactory"
+      provides="pmr2.app.annotation.interfaces.IExposureFileAnnotator"
+      />
+
+</configure>

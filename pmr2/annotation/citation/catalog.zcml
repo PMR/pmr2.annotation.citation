@@ -1,0 +1,9 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="pmr2">
+
+  <adapter 
+      factory=".catalog.license_uri" 
+      name="pmr2_license_uri" />
+
+</configure> 

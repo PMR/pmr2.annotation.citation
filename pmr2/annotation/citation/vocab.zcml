@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="pmr2">
+
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component=".vocab.CitationFormatVocabFactory"
+      name="pmr2.annotation.citation.CitationFormat"
+      />
+
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component=".vocab.LicenseTypeVocabFactory"
+      name="pmr2.annotation.citation.LicenseType"
+      />
+
+</configure>

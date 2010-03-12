@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<object name="License"
+   meta_type="Factory-based Type Information with dynamic views"
+   i18n:domain="pmr2.annotation.citation" 
+   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="title">License Document</property>
+ <property name="description">A license document</property>
+ <property name="content_icon">document_icon.gif</property>
+ <property name="content_meta_type">License</property>
+ <property name="product">pmr2.annotation.citation</property>
+ <property name="factory">addLicense</property>
+ <property name="immediate_view">view</property>
+ <property name="global_allow">True</property>
+ <property name="filter_content_types">True</property>
+ <property name="allowed_content_types" />
+ <property name="allow_discussion">False</property>
+ <property name="default_view">document_view</property>
+ <property name="view_methods">
+  <element value="document_view"/>
+ </property>
+
+ <alias from="(Default)" to="(dynamic view)"/>
+ <alias from="edit" to="atct_edit"/>
+ <alias from="sharing" to="@@sharing"/>
+ <alias from="view" to="document_view"/>
+
+ <action title="View" action_id="view" category="object" condition_expr=""
+    url_expr="string:${object_url}/view" visible="True" i18n:attributes="title">
+  <permission value="View"/>
+ </action>
+
+ <action title="Edit" action_id="edit" category="object" 
+    url_expr="string:${object_url}/edit" visible="True" i18n:attributes="title">
+  <permission value="Modify portal content"/>
+ </action>
+
+ <action title="License Details" action_id="edit_license" category="object" 
+    url_expr="string:${object_url}/@@edit_license" visible="True" 
+    i18n:attributes="edit_license">
+  <permission value="Modify portal content"/>
+ </action>
+
+</object>

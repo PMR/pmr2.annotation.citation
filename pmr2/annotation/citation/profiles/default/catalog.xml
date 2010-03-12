@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+
+  <index name="pmr2_license_uri" meta_type="FieldIndex">
+    <indexed_attr value="pmr2_license_uri"/>
+  </index>
+
+  <column value="pmr2_license_uri"/>
+
+</object>

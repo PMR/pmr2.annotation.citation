@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<atcttool
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <!-- 
+  This section defines all indexes for search criteria and sort order.
+ -->
+ <topic_indexes i18n:domain="pmr2.annotation.citation">
+  <index enabled="True" 
+      name="pmr2_dcterms_license" 
+      friendlyName="PMR2 dcterms:license"
+      description="The source license document in dcterms:license">
+   <criteria>ATSelectionCriterion</criteria>
+   <criteria>ATListCriterion</criteria>
+  </index>
+ </topic_indexes>
+ <topic_metadata i18n:domain="pmr2.app">
+  <metadata name="pmr2_dcterms_license" enabled="True" description=""
+      friendlyName="PMR2 dcterms:license"/>
+ </topic_metadata>
+</atcttool>
