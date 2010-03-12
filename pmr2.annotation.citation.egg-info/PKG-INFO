@@ -1,0 +1,25 @@
+Metadata-Version: 1.0
+Name: pmr2.annotation.citation
+Version: trunkdev
+Summary: A PMR2 annotation module for citation
+Home-page: http://www.bioeng.auckland.ac.nz/
+Author: Tommy Yu
+Author-email: tommy.yu@auckland.ac.nz
+License: GPL
+Description: Introduction
+        ============
+        
+        
+        
+        Changelog
+        =========
+        
+        trunk - Unreleased
+        ----------------
+        
+        * Initial release
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
