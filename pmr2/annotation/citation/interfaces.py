@@ -27,6 +27,9 @@ class ILicenseCitationNote(zope.interface.Interface):
 
     dcterms_license = zope.schema.TextLine(
         title=u'dcterms:license',
+        description=u'The link to the license this model is licensed under. '
+                     'It is automatically assigned if one of the assignment '
+                     'methods above is set.',
         required=False,
     )
 
@@ -77,3 +80,15 @@ class ILicense(zope.interface.Interface):
                      'please leave this field blank.',
         required=False,
     )
+
+
+class IPluginSettings(zope.interface.Interface):
+
+    default_license_path = zope.schema.Choice(
+        title=u'Default License',
+        description=u'If selected, the file will be the default license for '
+                     'all work within PMR2.',
+        vocabulary=u'pmr2.annotation.citation.LicenseType',
+        required=False,
+    )
+

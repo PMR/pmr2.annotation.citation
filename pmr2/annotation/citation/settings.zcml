@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="pmr2">
+
+  <!-- 
+    this is the adapter that works with the field because it appears to
+    go for one that is nameless
+  -->
+  <adapter 
+      for="pmr2.app.interfaces.IPMR2GlobalSettings"
+      factory=".PluginSettingsFactory"
+      provides=".interfaces.IPluginSettings"
+      />
+
+  <!-- 
+    however there may be cases that we need a name, especially when our
+    custom editor are fully based on names
+  -->
+  <adapter 
+      for="pmr2.app.interfaces.IPMR2GlobalSettings"
+      factory=".PluginSettingsFactory"
+      provides=".interfaces.IPluginSettings"
+      name="license_citation"
+      />
+
+  <!-- 
+    register the factory as a utility
+  -->
+  <utility
+      name="license_citation"
+      component=".PluginSettingsFactory"
+      provides="pmr2.app.interfaces.IPMR2PluggableSettings"
+      />
+
+</configure>

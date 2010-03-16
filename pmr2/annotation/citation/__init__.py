@@ -22,7 +22,12 @@ def initialize(context):
         fti = ftis,
         ).initialize(context)
 
-from pmr2.app.annotation import note_factory as factory
+from pmr2.app.annotation import note_factory
+from pmr2.app.settings import settings_factory
 from note import *
 
-LicenseCitationNoteFactory = factory(LicenseCitationNote, 'license_citation')
+LicenseCitationNoteFactory = note_factory(LicenseCitationNote,
+                                          'license_citation')
+PluginSettingsFactory = settings_factory(PluginSettings, 
+                                         'license_citation',
+                                         u'License and Citation Settings')

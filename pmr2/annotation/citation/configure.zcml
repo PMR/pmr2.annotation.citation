@@ -11,6 +11,7 @@
   <include file="profiles.zcml" />
   <include file="catalog.zcml" />
   <include file="vocab.zcml" />
+  <include file="settings.zcml" />
   <include file="subscriber.zcml" />
 
   <!-- Note storage -->
@@ -18,7 +19,7 @@
   <adapter
       for="pmr2.app.content.interfaces.IExposureFile"
       factory=".LicenseCitationNoteFactory"
-      provides="pmr2.annotation.citation.interfaces.ILicenseCitationNote"
+      provides=".interfaces.ILicenseCitationNote"
       name="license_citation"
       />
 
