@@ -218,8 +218,10 @@ pluggable PMR2 settings infrastructure.
 
     >>> from pmr2.app.browser.settings import PMR2GlobalSettingsEditForm
     >>> from pmr2.app.tests.base import TestRequest
+    >>> from pmr2.app.tests.browser import GroupTemplate
     >>> request = TestRequest()
     >>> f = PMR2GlobalSettingsEditForm(self.portal, request)
+    >>> f.template = GroupTemplate(f)
     >>> result = f()
     >>> 'license_citation.default_license_path' in result
     True
