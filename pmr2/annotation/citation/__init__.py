@@ -22,12 +22,23 @@ def initialize(context):
         fti = ftis,
         ).initialize(context)
 
+from z3c.form.field import Fields
+from z3c.form.interfaces import INPUT_MODE
+from plone.app.z3cform.wysiwyg.widget import WysiwygFieldWidget
+
 from pmr2.app.annotation import note_factory
 from pmr2.app.settings import settings_factory
+from pmr2.annotation.citation.interfaces import IPluginSettings
 from note import *
 
 LicenseCitationNoteFactory = note_factory(LicenseCitationNote,
                                           'license_citation')
+
+fields = Fields(IPluginSettings, prefix='license_citation')
+fields['license_citation.citation_instruction'].widgetFactory[INPUT_MODE] = \
+    WysiwygFieldWidget
+
 PluginSettingsFactory = settings_factory(PluginSettings, 
                                          'license_citation',
-                                         u'License and Citation Settings')
+                                         u'License and Citation Settings',
+                                         fields,)

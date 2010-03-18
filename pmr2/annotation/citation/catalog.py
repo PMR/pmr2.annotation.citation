@@ -10,5 +10,6 @@ from pmr2.annotation.citation.interfaces import *
 
 @indexer(ILicense)
 def license_uri(context):
-    # provide the intended review state that PMR2 uses.
-    return context.license_uri
+    if context.license_uri:
+        return context.license_uri
+    return unicode(context.absolute_url())

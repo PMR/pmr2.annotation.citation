@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<portlets>
+
+ <portlet 
+     addview="pmr2.portlets.license"
+     title="License Display"
+     description="A portlet that shows the license information attached to a piece of work.">
+ </portlet>
+
+</portlets>

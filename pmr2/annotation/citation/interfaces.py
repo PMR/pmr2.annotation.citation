@@ -70,6 +70,7 @@ class ILicense(zope.interface.Interface):
         title=u'Portlet Text',
         description=u'The text that will be shown on the sidebar for work '
                      'using this license.',
+        required=False,
     )
 
     license_uri = zope.schema.TextLine(
@@ -89,6 +90,14 @@ class IPluginSettings(zope.interface.Interface):
         description=u'If selected, the file will be the default license for '
                      'all work within PMR2.',
         vocabulary=u'pmr2.annotation.citation.LicenseType',
+        required=False,
+    )
+
+    citation_instruction = zope.schema.Text(
+        title=u'Citation Instruction',
+        description=u'If there are specific instructions for citing work that '
+                     'are present within this repository, you may enter it '
+                     'into the box below.',
         required=False,
     )
 

@@ -26,6 +26,7 @@ class License(ATDocument):
     # title = fieldproperty.FieldProperty(ILicense['title'])
     # description = fieldproperty.FieldProperty(ILicense['description'])
 
+    portlet_text = fieldproperty.FieldProperty(ILicense['portlet_text'])
     license_uri = fieldproperty.FieldProperty(ILicense['license_uri'])
 
 # type registration

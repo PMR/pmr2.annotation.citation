@@ -1,0 +1,5 @@
+<dl class="portlet" id="pmr_license">
+  <dt class="portletHeader">License</dt>
+  <dd tal:content="structure view/license">
+  </dd>
+</dl>

@@ -8,6 +8,7 @@
   <include package="pmr2.app" />
 
   <include package=".browser" />
+  <include package=".portlets" />
   <include file="profiles.zcml" />
   <include file="catalog.zcml" />
   <include file="vocab.zcml" />

@@ -17,13 +17,14 @@ workflow states.
 Do note, these work as a form of templates to generate the correct
 copyright and license text for the result documents.
 
-We first add a couple licenses using its add form.
+We first add a couple licenses using its add form, and publish them.
 ::
 
     >>> import zope.component
     >>> from Products.ATContentTypes.content.folder import ATFolder
     >>> from pmr2.app.tests.base import TestRequest
     >>> from pmr2.annotation.citation.browser import form
+    >>> from Products.CMFCore.utils import getToolByName
     >>> lid = 'licenses'
     >>> self.portal[lid] = ATFolder(lid)
     >>> licenses = self.portal.licenses
@@ -48,7 +49,7 @@ We first add a couple licenses using its add form.
     ...     form={
     ...         'form.widgets.id': u'test_license_2',
     ...         'form.widgets.title': u'Test License 2',
-    ...         'form.widgets.license_uri': u'http://example.com/license_2',
+    ...         'form.widgets.license_uri': u'',
     ...         'form.buttons.add': 1,
     ...     })
     >>> testform = form.LicenseAddForm(licenses, request)
@@ -57,7 +58,10 @@ We first add a couple licenses using its add form.
     >>> tl2
     <License ...>
     >>> tl2.license_uri
-    u'http://example.com/license_2'
+    >>> self.setRoles(('Manager',))
+    >>> wf = getToolByName(self.portal, 'portal_workflow')
+    >>> wf.doActionFor(tl, 'publish')
+    >>> wf.doActionFor(tl2, 'publish')
 
 Now that we have a license defined for use, an ExposureFile and note can
 be created.  We test the form to see that the selection box has the
@@ -121,6 +125,27 @@ When revisiting that form, the values should have been selected.
     >>> result = view()
     >>> 'selected="selected">Test License' in result
     True
+
+Now try again with the second license.  Note that we did not give it a
+URI, the resulting dcterms_license value should have been the URI of 
+that License object itself.
+::
+
+    >>> request = TestRequest(
+    ...     form={
+    ...         'form.widgets.format': [],
+    ...         'form.widgets.license_path': [u'Test License 2'],
+    ...         'form.widgets.dcterms_license': u'',
+    ...         'form.buttons.apply': 1,
+    ...     })
+    >>> view = ExposureFileNoteEditForm(filectx, request)
+    >>> view.traverse_subpath = ['license_citation']
+    >>> result = view()
+    >>> note = zope.component.queryAdapter(filectx, name='license_citation')
+    >>> note.license_path
+    '/plone/licenses/test_license_2'
+    >>> note.dcterms_license
+    u'http://nohost/plone/licenses/test_license_2'
 
 Of course, there will be cases where the license information is
 provided by the source file (in the dcterms:license node within the
@@ -274,4 +299,7 @@ Then we use this new formatter.
     >>> note.license_path
     '/plone/licenses/test_license_2'
     >>> note.dcterms_license
-    u'http://example.com/license_2'
+    u'http://nohost/plone/licenses/test_license_2'
+
+Note that even though there was no URI specified, a default one had been
+generated from where the license document lies.

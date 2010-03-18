@@ -6,6 +6,7 @@ First we make some License documents inside a license folder.
 ::
 
     >>> from Products.ATContentTypes.content.folder import ATFolder
+    >>> from Products.CMFCore.utils import getToolByName
     >>> from pmr2.annotation.citation.content import License
     >>> licenses = 'licenses'
     >>> self.portal[licenses] = ATFolder(licenses)
@@ -13,11 +14,69 @@ First we make some License documents inside a license folder.
     >>> self.licenses['L1'] = License('L1')
     >>> self.licenses['L2'] = License('L2')
     >>> self.licenses['L3'] = License('L3')
+    >>> self.setRoles(('Manager',))
+    >>> wf = getToolByName(self.portal, 'portal_workflow')
+    >>> wf.doActionFor(self.licenses['L1'], 'publish')
+    >>> wf.doActionFor(self.licenses['L2'], 'publish')
 
-Then we can use the catalog the query for licenses.
+Then we can use the catalog the query for licenses.  It should only
+return the licenses that have been published.
 ::
 
     >>> from pmr2.annotation.citation.utility import getLicenses
     >>> results = getLicenses(self.portal)
-    >>> len(results) == 3
+    >>> len(results) == 2
     True
+
+The getLicenses function can also get specific licenses.  First we need
+to assign some data to the licenses and reindex it.
+::
+
+    >>> self.licenses['L1'].license_uri = u'http://example.com'
+    >>> self.licenses['L1'].portlet_text = u'' \
+    ...     'This is an <a href="http://example.com/license">example</a>.' \
+    ...     '<script>alert("XSS");</script>'
+    >>> self.licenses['L1'].reindexObject()
+
+Getting license by specific object path can be done.
+::
+
+    >>> result = getLicenses(self.portal, path='/plone/licenses/L1')[0]
+    >>> result.pmr2_license_uri
+    u'http://example.com'
+
+However the usual case will be done via the URI to the license.
+::
+
+    >>> result = getLicenses(self.portal, 
+    ...                      pmr2_license_uri=u'http://example.com')[0]
+    >>> result.pmr2_license_uri
+    u'http://example.com'
+
+In order to get the descriptive text safely, there is a specific method
+for it, which retreives the text based on the URI to the license.
+::
+
+    >>> from pmr2.annotation.citation.utility import getLicensePortletText
+    >>> getLicensePortletText(self.portal, u'http://example.com')
+    u'This is an <a href="http://example.com/license">example</a>.'
+
+It also works for locally defined license.
+::
+
+    >>> getLicensePortletText(self.portal, u'http://nohost/plone/licenses/L2')
+    u'The terms...<a href="http://nohost/plone/licenses/L2">http://...</a>.'
+
+If the license title is set, a more friendly string can be produced.
+::
+
+    >>> self.licenses['L2'].setTitle('Example')
+    >>> self.licenses['L2'].reindexObject()
+    >>> getLicensePortletText(self.portal, u'http://nohost/plone/licenses/L2')
+    u'The terms...<a href="http://nohost/plone/licenses/L2">Example</a>.'
+
+A nasty string should not cause XSS issues.
+::
+
+    >>> getLicensePortletText(self.portal, u'\'"><script>')
+    u'The terms...<a href="\'&quot;&gt;&lt;script&gt;">\'"&gt;&lt;script...'

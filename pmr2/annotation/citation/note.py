@@ -31,3 +31,5 @@ class PluginSettings(Persistent, Contained):
     #title = u'Citation and Annotation Settings'
     default_license_path = zope.schema.fieldproperty.FieldProperty(
         IPluginSettings['default_license_path'])
+    citation_instruction = zope.schema.fieldproperty.FieldProperty(
+        IPluginSettings['citation_instruction'])

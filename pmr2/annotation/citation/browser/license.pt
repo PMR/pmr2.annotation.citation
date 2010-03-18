@@ -1,0 +1,4 @@
+<h2>License and Citation</h2>
+<p tal:replace="structure view/license_description"/>
+<h3>Citation Instructions</h3>
+<tal:block tal:replace="structure view/citation_instruction"/>
