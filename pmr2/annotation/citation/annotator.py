@@ -16,6 +16,8 @@ class LicenseCitationAnnotator(ExposureFileAnnotatorBase):
     title = u'License and Citation'
     label = u'Cite this model'
     description = u''
+    for_interface = ILicenseCitationNote
+    edited_names = set(ILicenseCitationNote.names())
 
     def generate(self):
         note = self.note
