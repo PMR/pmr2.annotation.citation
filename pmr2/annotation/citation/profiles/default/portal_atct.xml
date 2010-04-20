@@ -6,15 +6,15 @@
  -->
  <topic_indexes i18n:domain="pmr2.annotation.citation">
   <index enabled="True" 
-      name="pmr2_dcterms_license" 
-      friendlyName="PMR2 dcterms:license"
-      description="The source license document in dcterms:license">
+      name="pmr2_license_uri" 
+      friendlyName="PMR2 License URI"
+      description="The URI of the license document.">
    <criteria>ATSelectionCriterion</criteria>
    <criteria>ATListCriterion</criteria>
   </index>
  </topic_indexes>
- <topic_metadata i18n:domain="pmr2.app">
-  <metadata name="pmr2_dcterms_license" enabled="True" description=""
-      friendlyName="PMR2 dcterms:license"/>
+ <topic_metadata i18n:domain="pmr2.annotation.citation">
+  <metadata name="pmr2_license_uri" enabled="True" description=""
+      friendlyName="PMR2 License URI"/>
  </topic_metadata>
 </atcttool>
