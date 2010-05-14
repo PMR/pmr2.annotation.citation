@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: pmr2.annotation.citation
-Version: trunkdev
+Version: 0.1rc1
 Summary: A PMR2 annotation module for citation
 Home-page: http://www.bioeng.auckland.ac.nz/
 Author: Tommy Yu
