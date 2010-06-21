@@ -1,8 +1,11 @@
 Changelog
 =========
 
-trunk - Unreleased
-----------------
+0.1 - Released (2010-06-21)
+---------------------------
 
-* Initial release
-
+* Plugs into the PMR2 Settings form to allow input of default terms of
+  use for models.
+* Portlet to display license used by the model.
+* License document type for storage of license text and portlet text for
+  PMR2 Exposure Files.
