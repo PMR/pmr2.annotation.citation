@@ -32,6 +32,7 @@ pmr2/annotation/citation/vocab.zcml
 pmr2/annotation/citation/browser/__init__.py
 pmr2/annotation/citation/browser/configure.zcml
 pmr2/annotation/citation/browser/form.py
+pmr2/annotation/citation/browser/interfaces.py
 pmr2/annotation/citation/browser/license.pt
 pmr2/annotation/citation/browser/view.py
 pmr2/annotation/citation/portlets/License.py
@@ -43,6 +44,7 @@ pmr2/annotation/citation/profiles/default/factorytool.xml
 pmr2/annotation/citation/profiles/default/portal_atct.xml
 pmr2/annotation/citation/profiles/default/portlets.xml
 pmr2/annotation/citation/profiles/default/types.xml
+pmr2/annotation/citation/profiles/default/workflows.xml
 pmr2/annotation/citation/profiles/default/types/License.xml
 pmr2/annotation/citation/tests/__init__.py
 pmr2/annotation/citation/tests/base.py
