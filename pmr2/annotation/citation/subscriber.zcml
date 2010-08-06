@@ -4,7 +4,7 @@
 
   <subscriber
       for="pmr2.annotation.citation.interfaces.ILicense
-          zope.app.event.interfaces.IObjectModifiedEvent"
+          zope.lifecycleevent.interfaces.IObjectModifiedEvent"
       handler=".content.catalog_content"
       />
 
