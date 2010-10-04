@@ -15,7 +15,7 @@
   <!-- Note pages -->
 
   <browser:page
-      for="pmr2.app.content.ExposureFile"
+      for="pmr2.app.exposure.interfaces.IExposureFile"
       name="license_citation"
       class=".view.LicenseCitationNoteView"
       permission="zope2.View"

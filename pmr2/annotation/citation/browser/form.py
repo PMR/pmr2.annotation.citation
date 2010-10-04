@@ -7,8 +7,9 @@ from z3c.form.interfaces import INPUT_MODE
 
 from pmr2.app.browser import form
 from pmr2.app.browser.layout import PlainLayoutWrapper
-from pmr2.app.browser.exposure import ExposureFileViewBase
 from pmr2.app.browser.interfaces import IObjectIdMixin
+
+from pmr2.app.exposure.browser import ExposureFileViewBase
 
 from pmr2.annotation.citation.interfaces import ILicense
 from pmr2.annotation.citation.content import License

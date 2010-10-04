@@ -18,7 +18,7 @@
   <!-- Note storage -->
 
   <adapter
-      for="pmr2.app.content.interfaces.IExposureFile"
+      for="pmr2.app.exposure.interfaces.IExposureFile"
       factory=".LicenseCitationNoteFactory"
       provides=".interfaces.ILicenseCitationNote"
       name="license_citation"
