@@ -69,7 +69,7 @@ above license as an available choice.
 ::
 
     >>> from pmr2.app.exposure.content import ExposureFile
-    >>> from pmr2.app.exposure.browser import ExposureFileNoteEditForm
+    >>> from pmr2.app.exposure.browser.browser import ExposureFileNoteEditForm
     >>> self.portal.f = ExposureFile('f')
     >>> filectx = self.portal.f
     >>> request = TestRequest()
@@ -91,7 +91,6 @@ Now we use the annotator form to assign the license to the note attached
 to the file.
 ::
 
-    >>> from pmr2.app.exposure.browser import ExposureFileNoteEditForm
     >>> from pmr2.app.annotation.interfaces import IExposureFileNote
     >>> request = TestRequest(
     ...     form={

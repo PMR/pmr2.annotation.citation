@@ -6,7 +6,7 @@ from Products.CMFCore.utils import getToolByName
 from pmr2.app.interfaces import IPMR2GlobalSettings
 from pmr2.app.browser.layout import PlainLayoutWrapper
 
-from pmr2.app.exposure.browser import ExposureFileViewBase
+from pmr2.app.exposure.browser.browser import ExposureFileViewBase
 
 from pmr2.annotation.citation.interfaces import IPluginSettings
 from pmr2.annotation.citation.utility import getLicensePortletText
