@@ -7,8 +7,8 @@ from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
 from Products.CMFCore.utils import getToolByName
 
-from pmr2.app.vocab import vocab_factory
-from pmr2.app.interfaces import IPMR2GlobalSettings
+from pmr2.app.factory import vocab_factory
+from pmr2.app.settings.interfaces import IPMR2GlobalSettings
 from pmr2.app.annotation.interfaces import *
 from pmr2.annotation.citation.utility import getLicenses
 from pmr2.annotation.citation.interfaces import *

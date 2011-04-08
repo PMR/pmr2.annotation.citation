@@ -4,7 +4,7 @@ import zope.component
 from zope.schema import fieldproperty
 from zope.app.container.contained import Contained
 
-from pmr2.app.interfaces import IPMR2GlobalSettings
+from pmr2.app.settings.interfaces import IPMR2GlobalSettings
 from pmr2.app.settings import settings_factory
 
 from pmr2.app.annotation.note import RawTextNote

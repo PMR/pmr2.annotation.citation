@@ -10,8 +10,6 @@ from Products.PluggableAuthService.PluggableAuthService import \
 def initialize(context):
     """Initializer called when used as a Zope 2 product."""
 
-    from pmr2.app import content
-
     content_types, constructors, ftis = atapi.process_types(atapi.listTypes('pmr2.annotation.citation'), 'pmr2.annotation.citation')
 
     cmfutils.ContentInit(

@@ -240,7 +240,7 @@ This plugin provides the ability to store default settings via the
 pluggable PMR2 settings infrastructure.
 ::
 
-    >>> from pmr2.app.browser.settings import PMR2GlobalSettingsEditForm
+    >>> from pmr2.app.settings.browser import PMR2GlobalSettingsEditForm
     >>> from pmr2.app.tests.base import TestRequest
     >>> from pmr2.app.tests.browser import GroupTemplate
     >>> request = TestRequest()
@@ -260,7 +260,7 @@ won't test the functionality of the form itself since there are likely
 other fields registered, we are going to change the settings manually.
 ::
 
-    >>> from pmr2.app.interfaces import IPMR2GlobalSettings
+    >>> from pmr2.app.settings.interfaces import IPMR2GlobalSettings
     >>> from pmr2.annotation.citation.interfaces import IPluginSettings
     >>> pmr2_settings = zope.component.getUtility(IPMR2GlobalSettings)
     >>> citation_settings = IPluginSettings(pmr2_settings)

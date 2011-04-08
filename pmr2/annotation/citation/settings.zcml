@@ -8,7 +8,7 @@
     go for one that is nameless
   -->
   <adapter 
-      for="pmr2.app.interfaces.IPMR2GlobalSettings"
+      for="pmr2.app.settings.interfaces.IPMR2GlobalSettings"
       factory=".PluginSettingsFactory"
       provides=".interfaces.IPluginSettings"
       />
@@ -18,7 +18,7 @@
     custom editor are fully based on names
   -->
   <adapter 
-      for="pmr2.app.interfaces.IPMR2GlobalSettings"
+      for="pmr2.app.settings.interfaces.IPMR2GlobalSettings"
       factory=".PluginSettingsFactory"
       provides=".interfaces.IPluginSettings"
       name="license_citation"
@@ -30,7 +30,7 @@
   <utility
       name="license_citation"
       component=".PluginSettingsFactory"
-      provides="pmr2.app.interfaces.IPMR2PluggableSettings"
+      provides="pmr2.app.settings.interfaces.IPMR2PluggableSettings"
       />
 
 </configure>

@@ -6,7 +6,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.PortalTransforms.data import datastream
 
 from pmr2.app.factory import NamedUtilBase
-from pmr2.app.interfaces import IPMR2GlobalSettings
+from pmr2.app.settings.interfaces import IPMR2GlobalSettings
 from pmr2.annotation.citation.interfaces import *
 
 def getLicenses(context, **kw):
