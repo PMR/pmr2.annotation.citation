@@ -1,5 +1,7 @@
 from xml.sax.saxutils import escape, quoteattr
 import zope.interface
+from zope.app.component.hooks import getSite
+
 from Products.CMFCore.utils import getToolByName
 from Products.PortalTransforms.data import datastream
 
@@ -18,7 +20,13 @@ def getLicenses(context, **kw):
     }
 
     kw.update(base_query)
-    pt = getToolByName(context, 'portal_catalog')
+    try:
+        pt = getToolByName(context, 'portal_catalog')
+    except AttributeError:
+        # we try another way...
+        site = getSite()
+        pt = getToolByName(site, 'portal_catalog')
+
     results = pt(**kw)
     return results
 
