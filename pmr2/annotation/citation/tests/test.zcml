@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="pmr2.app">
+
+  <z3c:widgetTemplate
+      mode="input"
+      widget="plone.app.z3cform.wysiwyg.widget.IWysiwygWidget"
+      layer="pmr2.testing.base.IPMR2TestRequest"
+      template="wysiwyg_input.pt"
+      />
+
+</configure>
