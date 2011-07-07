@@ -22,7 +22,7 @@ We first add a couple licenses using its add form, and publish them.
 
     >>> import zope.component
     >>> from Products.ATContentTypes.content.folder import ATFolder
-    >>> from pmr2.app.tests.base import TestRequest
+    >>> from pmr2.testing.base import TestRequest
     >>> from pmr2.annotation.citation.browser import form
     >>> from Products.CMFCore.utils import getToolByName
     >>> lid = 'licenses'
@@ -241,8 +241,7 @@ pluggable PMR2 settings infrastructure.
 ::
 
     >>> from pmr2.app.settings.browser import PMR2GlobalSettingsEditForm
-    >>> from pmr2.app.tests.base import TestRequest
-    >>> from pmr2.app.tests.browser import GroupTemplate
+    >>> from pmr2.testing.browser import GroupTemplate
     >>> request = TestRequest()
     >>> f = PMR2GlobalSettingsEditForm(self.portal, request)
     >>> f.template = GroupTemplate(f)

@@ -2,7 +2,9 @@ import zope.interface
 from plone.indexer import indexer
 from Products.CMFCore.utils import getToolByName
 
-from pmr2.app.interfaces import IExposureSourceAdapter, IPMR2KeywordProvider
+from pmr2.app.interfaces import IPMR2KeywordProvider
+
+from pmr2.app.exposure.interfaces import IExposureSourceAdapter
 
 from pmr2.annotation.citation.interfaces import *
 
