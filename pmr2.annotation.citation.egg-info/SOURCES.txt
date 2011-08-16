@@ -48,4 +48,6 @@ pmr2/annotation/citation/profiles/default/types.xml
 pmr2/annotation/citation/profiles/default/types/License.xml
 pmr2/annotation/citation/tests/__init__.py
 pmr2/annotation/citation/tests/base.py
+pmr2/annotation/citation/tests/test.zcml
 pmr2/annotation/citation/tests/test_doctest.py
+pmr2/annotation/citation/tests/wysiwyg_input.pt
