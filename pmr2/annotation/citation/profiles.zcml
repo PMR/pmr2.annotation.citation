@@ -5,7 +5,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="PMR2 Citations"
+      title="PMR2 Citation Annotation"
       directory="profiles/default"
       description="Citation and License display support for PMR2"
       provides="Products.GenericSetup.interfaces.EXTENSION"
