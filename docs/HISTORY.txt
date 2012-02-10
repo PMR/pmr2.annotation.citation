@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.4 - Released (2012-02-10)
+---------------------------
+
+* Compatability fix for pmr2.app-0.5 as annotator require request.
+* Minor naming update, now more specific to the objective of this 
+  package.
+
 0.3 - Released (2010-08-16)
 ---------------------------
 
