@@ -8,7 +8,7 @@
   <browser:page
       for="..interfaces.ILicense"
       name="edit_license"
-      class=".form.LicenseEditFormView"
+      class=".form.LicenseEditForm"
       permission="cmf.ModifyPortalContent"
       />
 
@@ -17,7 +17,7 @@
   <browser:page
       for="pmr2.app.exposure.interfaces.IExposureFile"
       name="license_citation"
-      class=".view.LicenseCitationNoteView"
+      class=".view.LicenseCitationNote"
       permission="zope2.View"
       />
 
