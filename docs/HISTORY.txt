@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.5 - Released (2012-09-02)
+---------------------------
+
+* Compatability fix for pmr2.app-0.6 for the layout purge.
+
 0.4 - Released (2012-02-10)
 ---------------------------
 
