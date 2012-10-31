@@ -4,7 +4,7 @@ from plone.app.z3cform.wysiwyg.widget import WysiwygFieldWidget
 import z3c.form
 from z3c.form.interfaces import INPUT_MODE
 
-from pmr2.app.browser import form
+from pmr2.z3cform import form
 from pmr2.app.browser.interfaces import IObjectIdMixin
 
 from pmr2.app.exposure.browser.browser import ExposureFileViewBase
