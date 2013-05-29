@@ -2,7 +2,7 @@ from zope import schema
 from zope.formlib import form
 from zope.interface import implements
 import zope.component
-from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider

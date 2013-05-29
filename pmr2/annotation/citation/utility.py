@@ -1,6 +1,6 @@
 from xml.sax.saxutils import escape, quoteattr
 import zope.interface
-from zope.app.component.hooks import getSite
+from zope.component.hooks import getSite
 
 from Products.CMFCore.utils import getToolByName
 from Products.PortalTransforms.data import datastream
