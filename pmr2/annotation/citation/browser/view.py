@@ -1,5 +1,5 @@
 import zope.component
-from zope.app.pagetemplate.viewpagetemplatefile import ViewPageTemplateFile
+from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 from Products.CMFCore.utils import getToolByName
 
 from pmr2.app.settings.interfaces import IPMR2GlobalSettings
