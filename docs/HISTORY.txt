@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.5.1 - Released (2012-07-08)
+-----------------------------
+
+* Deprecated import locations from zope.app fixed.
+
 0.5 - Released (2012-10-03)
 ---------------------------
 
